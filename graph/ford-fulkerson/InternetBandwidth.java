@@ -66,9 +66,7 @@ public class InternetBandwidth {
 				prev.edges.put(current.id, old - minCapOnPath);
 				// Edge may not exist if edges are bidirectional.
 				old = current.edges.get(prev.id);
-				// This is different because the problem says that the amount
-				// Transmitted in both directions must be less than the capacity.
-				current.edges.put(prev.id, old - minCapOnPath);
+				current.edges.put(prev.id, old + minCapOnPath);
 				current = prev;
 			}
 			maxFlow += minCapOnPath;
