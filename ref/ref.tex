@@ -1,0 +1,197 @@
+\documentclass[10pt,oneside]{memoir}
+%\usepackage{createspace}
+%\usepackage[size=pocket,noicc]{createspace}
+\usepackage[paperwidth=8.5in, paperheight=11in]{geometry}
+%\usepackage[T1]{fontenc}
+\usepackage[USenglish]{babel}
+
+
+
+%\checkandfixthelayout
+
+% See the ``Memoir customise'' template for some common customisations
+% Don't forget to read the Memoir manual: memman.pdf
+
+%\title{TITLE OF BOOK}
+%\author{NAME OF AUTHOR}
+%\date{} % Delete this line to display the current date
+
+%% BEGIN TITLE
+
+\makeatletter
+\def\maketitle{%
+  \null
+  \thispagestyle{empty}%
+  \vfill
+  \begin{center}\leavevmode
+    \normalfont
+    {\LARGE\raggedleft \@author\par}%
+    \hrulefill\par
+    {\huge\raggedright \@title\par}%
+    \vskip 1cm
+%    {\Large \@date\par}%
+  \end{center}%
+  \vfill
+  \null
+  \cleardoublepage
+  }
+\makeatother
+\title{Algorithmic References}
+\date{2016}
+
+
+
+
+
+
+%%% BEGIN DOCUMENT
+
+\begin{document}
+
+\let\cleardoublepage\clearpage
+
+\maketitle
+
+\mainmatter
+
+\begingroup
+\let\cleardoublepage\clearpage
+\tableofcontents
+\endgroup
+
+\chapter{Data Structures}
+
+    \section{Priority Queue}
+
+    Priority Queue in Java
+
+
+
+\chapter{Graph Algorithms}
+
+    \section{Articulation Vertices}
+
+    Articulation Vertices and Cut Verticies
+
+    \section{BFS}
+
+    Bread-First Search
+
+    \section{Bridges}
+
+    Bridge Finding Algorithm
+
+    \section{DFS}
+
+    Depth-First Search
+
+    \section{Dijkstra}
+
+    Dijkstra's Shortest Path algorithm.
+
+    \section{Dinic}
+
+    Dinic's algorithm
+
+    \section{Edmond}
+
+    Edmond's Algorithm
+
+    \section{Edmonds–Karp}
+
+    Edmond–Karp Algorithm
+
+    \section{Ford-Fulkerson}
+
+    Ford-Fulkerson algorithm
+
+    \section{Floyd-Warshall}
+
+    Floyd-Warshall's algorithm
+
+    \section{Kahn}
+
+    Khan's Algorithm
+
+    \section{Kruskal}
+
+    Kruskal's Algorithm
+
+    \section{Minimax}
+
+    Minimax Algorithm
+
+    \section{Minimum Vertex Cover}
+
+    Minimum Vertex Cover
+
+    \section{Prim}
+
+    Prim's algorithm
+
+    \section{Shortest Disjoint Paths}
+
+    Shortest Disjoint Paths algorithm
+
+
+
+\chapter{String Processing}
+
+    \section{Edit Distance}
+
+    Edit Distance
+
+    \section{Hamming Distance}
+
+    Hamming Distance
+
+    \section{Knuth Morris Pratt}
+
+    Knuth Morris Pratt algorithm
+
+    \section{Suffix Trie}
+
+    Suffix Tries ("try")
+
+    \section{Suffix Tree}
+
+    Suffix Trees
+
+    \section{Suffix Array}
+
+    Suffix Arrays
+
+
+\chapter{Computational Geometry}
+
+    \section{Graham's Scan}
+
+    Graham's Scan
+
+    \section{Points}
+
+    \subsection{Distance Between}
+
+    Distance Between Points
+
+    \section{Lines}
+
+    \subsection{Line to Point}
+
+    Distance between line and point
+
+    \subsection{Rotation}
+
+    Rotations
+
+    \section{Polygons}
+
+    \subsection{Area}
+
+    Area of Polygon
+
+    \subsection{Perimeter}
+
+    Perimeter of Polygon
+
+\end{document}
