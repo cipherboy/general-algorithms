@@ -32,6 +32,8 @@ public class MaxRangeSum {
 	 * Implementation of Maximum 1D Range Sum. This is an O(n) algorithm to find the
 	 * value of the continuous sub-array with the maximum sum. If there is no positive
 	 * subarray, we return 0 (this can be easily modified)
+	 *
+	 * For a version of this function that allows negative values, look at Max3dGridSum
 	 * @param arr the array to search
 	 * @return the maximum sub array sum
 	 */
