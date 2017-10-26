@@ -1,0 +1,85 @@
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+
+		int trials = scan.nextInt();
+		for (int t = 1; t <= trials; t++) {
+			int x = scan.nextInt(), y = scan.nextInt(), z = scan.nextInt();
+			long[][][] grid = new long[x][y][z];
+			for (int i = 0; i < x; i++) {
+				for (int j = 0; j < y; j++) {
+					for (int k = 0; k < z; k++) {
+						grid[i][j][k] = scan.nextLong();
+					}
+				}
+			}
+
+			System.out.println(max3dSum(grid));
+			if (t != trials) {
+				System.out.println();
+			}
+		}
+	}
+
+	/**
+	 * finds the maximum sum in a 3 dimensional sub array of a 3 dimensional
+	 * array uses DP over 2d and 1d arrays. Reduces O(n^6) to O(n^5)
+	 */
+	public static long max3dSum(long[][][] grid) {
+		int size1 = grid.length;
+		int size2 = grid[0].length;
+		int size3 = grid[0][0].length;
+
+		long currentResult;
+		long maxSum = Long.MIN_VALUE;
+
+		for (int i = 0; i < size1; i++) {
+			long[][] temp = new long[size2][size3];
+			for (int j = i; j < size1; j++) {
+				for (int m = 0; m < size2; m++) {
+					for (int n = 0; n < size3; n++) {
+						temp[m][n] += grid[j][m][n];
+					}
+				}
+
+				currentResult = max2dSum(temp);
+				maxSum = Math.max(maxSum, currentResult);
+			}
+		}
+
+		return maxSum;
+	}
+
+	static long max2dSum(long[][] arr) {
+		int cols = arr[0].length;
+		int rows = arr.length;
+		long currentResult;
+		long maxSum = Long.MIN_VALUE;
+
+		for (int leftCol = 0; leftCol < cols; leftCol++) {
+			long[] tmp = new long[rows];
+			for (int rightCol = leftCol; rightCol < cols; rightCol++) {
+				for (int i = 0; i < rows; i++) {
+					tmp[i] += arr[i][rightCol];
+				}
+				currentResult = max1dSum(tmp);
+				maxSum = Math.max(maxSum, currentResult);
+			}
+		}
+
+		return maxSum;
+	}
+
+	static long max1dSum(long[] arr) {
+		long maxSoFar = Long.MIN_VALUE, maxEndingHere = 0;
+		for (long x : arr) {
+			maxEndingHere += x;
+			maxSoFar = Math.max(maxEndingHere, maxSoFar);
+			maxEndingHere = Math.max(0, maxEndingHere);
+		}
+		return maxSoFar;
+	}
+}
