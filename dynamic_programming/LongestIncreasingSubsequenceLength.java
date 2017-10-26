@@ -2,7 +2,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class LongestIncreasingSubsequence {
+public class LongestIncreasingSubsequenceLength {
 	public static void main(String[] args) {
 		// example for Longest Increasing Subsequence: Solves UVa 231 - Testing
 		// the CATCHER
