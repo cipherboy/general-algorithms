@@ -1,7 +1,7 @@
 
 import java.util.Arrays;
 
-public class Main {
+public class NextPermutation {
 	public static void main(String[] args) {
 		int[] array = {0, 1, 1, 1, 4};
 		do {  // Must start at lowest permutation
