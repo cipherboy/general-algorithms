@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class BFS {
+public class DFS {
     public static HashMap<Integer, HashSet<Integer>> graph;
 
 
@@ -14,13 +14,13 @@ public class BFS {
         }
     }
 
-	public static Result bfs(int start, int end) {
+	public static Result dfs(int start, int end) {
         Result r = new Result();
-		LinkedList<Integer> queue = new LinkedList<Integer>();
-		queue.add(start);
+		Stack<Integer> s = new Stack<Integer>();
+		s.add(start);
 
-		while (!queue.isEmpty()) {
-			Integer u = queue.remove(0);
+		while (!s.isEmpty()) {
+			Integer u = s.pop();
             r.reachable.add(u);
 			for (Integer v : graph.get(u)) {
 				if (v == end) {
@@ -31,7 +31,7 @@ public class BFS {
 
 				if (!r.parents.containsKey(v)) {
 					r.parents.put(v, u);
-					queue.add(v);
+					s.add(v);
 				}
 			}
 		}
@@ -50,11 +50,11 @@ public class BFS {
         graph.put(6, new HashSet<Integer>());
         graph.get(1).add(2);
         graph.get(2).add(3);
-        graph.get(2).add(3);
+        graph.get(3).add(4);
         graph.get(4).add(5);
         graph.get(5).add(6);
         graph.get(6).add(5);
-        Result r = bfs(1, 5);
+        Result r = dfs(1, 2);
         System.out.println(r.parents.get(3));
         System.out.println(Arrays.toString(r.reachable.toArray(new Integer[0])));
     }
